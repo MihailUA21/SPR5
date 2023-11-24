@@ -79,4 +79,25 @@ public:
 
 int main() {
    
+        Tamahawk tamahawkBuilder;
+        AIM120 aim120Builder;
+
+        Director director;
+
+        director.setBuilder(&tamahawkBuilder);
+
+        Rocket* tamahawkRocket = director.getRocket();
+        tamahawkRocket->getInfo();
+
+        cout << endl;
+
+        director.setBuilder(&aim120Builder);
+
+        Rocket* aim120Rocket = director.getRocket();
+        aim120Rocket->getInfo();
+
+        delete tamahawkRocket;
+        delete aim120Rocket;
+
+        return 0;
 }
